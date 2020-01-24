@@ -1,0 +1,8 @@
+This program try to replace every space in the string "Cmput 229 is the absolute bomb.\n" with '-'. 
+
+The bug I found is in the line "lw	$a1 Old",Old is a byte but here the programmer used load word
+instruction which load the content of 4 bytes,then register a1 is initialized as 10010005 in hex while
+register t0 = 43 in hex so the beq instruction would never consider them as equal so the program would 
+not change all ' ' to '-'.
+
+The way to correct the code is to change the line "lw	$a1 Old" to "lb  $a1 Old".

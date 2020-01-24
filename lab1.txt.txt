@@ -1,0 +1,53 @@
+q1:Number = 35
+
+q2:d3
+
+q3:00400038
+
+q4:7 times
+lw $4, 0($29)
+lw $9, 0($16)
+lw $9, 0($16)
+lw $9, 0($16)
+lw $9, 0($16)
+lw $9, 0($16)
+lw $9, 0($16)
+The first time it loads the whole word array(integer) to $s0
+Then all the rest 6 times it load the element from the array in order to $t1
+
+q5: 626d754e 3d207265 000a0020
+    b m u N  =   r e          
+N:0x10010018
+u:0x10010019
+m:0x1001001A
+b:0x1001001B
+e:0x1001001C
+r:0x1001001D
+space:0x10010001E
+=:0x1001001F
+
+q6:0x3344003c
+     3 D   <
+"< D3"
+
+q7:
+0011 0011 0100 0100 0000 0000 0011 1100
+860094524 in decimal
+
+q8:
+	.word 21, 88, -5, -10   #store array word[21,88,-5,-10] in memory with address from 0x10010000 to 0x1001000f
+	.byte 10, 'c'           #store 10 and 'c' in successive bytes of memory ,10 in 0x10010010 and 'c' in 0x10010011
+	.align 2                #Align the next datum on a 4 byte boundary
+	.space 9                #allocate 9 bytes of space stored from 0x10010014 to 0x1001001c
+	.asciiz "ABCD"          #Store the string "ABCD" in memory and set a null-terminate,they are stored from 0x1001001d to 0x10010020 with a null byte in 0x10010021
+	.ascii "EF"             #Store the string "EF" witout setting a null-terminate,they are stored from 0x10010022 to 0x10010023
+
+q9:
+print $s0
+
+q10:
+
+loops
+
+explain:we can set a label as a header ,then use beq instuction to check if the number of converted int equal to the number of 
+int need to be converted  after each convertion.
